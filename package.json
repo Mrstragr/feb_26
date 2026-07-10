@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "build": "node -e \"import('fs').then(fs=>fs.promises.mkdir('dist',{recursive:true}).then(()=>Promise.all(['index.html','src/main.js','src/styles.css'].map(async f=>{const path=await import('path'); await fs.promises.mkdir(path.dirname('dist/'+f),{recursive:true}); await fs.promises.copyFile(f,'dist/'+f)}))))\""
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
